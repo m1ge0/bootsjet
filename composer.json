@@ -1,0 +1,43 @@
+
+
+
+{
+  "name": "M1ge0/Bootsjet",
+    "description": "A Laravel 10 package for Jetstream + Livewire to switch from Tailwindcss to Bootstrap.",
+    "keywords": ["laravel", "bootstrap", "jetstream"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "m1ge0",
+            "role": "Dev"
+        }
+    ],
+  "require": {
+    "php": "^8.2",
+    "illuminate/support": "^10.0"
+  },
+  "require-dev": {
+    "laravel/jetstream": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "M1ge0\\Bootsjet\\": "/src/M1ge0/Bootsjet"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "M1ge0\\Bootsjet\\BootsjetServiceProvider"
+      ],
+      "aliases": {
+        "Bootsjet": "M1ge0\\Bootsjet\\JetstrapFacade"
+      }
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
+
