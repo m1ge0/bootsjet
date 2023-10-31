@@ -1,6 +1,3 @@
-
-
-
 {
   "name": "M1ge0/Bootsjet",
     "description": "A Laravel 10 package for Jetstream + Livewire to switch from Tailwindcss to Bootstrap.",

@@ -67,10 +67,17 @@ class InstallCommand extends Command
         (new Filesystem)->ensureDirectoryExists(resource_path('js'));
         (new Filesystem)->ensureDirectoryExists(resource_path('views'));
 
-        // copy sass- and js-folder frim stubs
+        // copy sass- and js-folder from stubs
         (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/resources/js', resource_path('js'));
         (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/resources/sass', resource_path('sass'));
-        $this->info('Copying sass- and js-directory ...');
+
+        // light-dark mode js script
+        (new Filesystem)->makeDirectory(public_path('js'));
+        (new Filesystem)->ensureDirectoryExists(public_path('js'));
+        copy(__DIR__.'/../../../../stubs/resources/custom.js', public_path('js/custom.js'));
+
+
+        $this->info('Copying sass-, js-directory and js-script...');
 
 
         //Views

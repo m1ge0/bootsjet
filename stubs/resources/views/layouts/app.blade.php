@@ -7,84 +7,65 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+
         <!-- Fonts -->
-        @googlefonts
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+        <!-- Fonts -->
+        {{-- @googlefonts('SourceCodePro') --}}
 
         <!-- Scripts -->
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
+
+        <!-- Styles -->
+        @livewireStyles
     </head>
 
 
     <body class="font-sans antialiased">
-        @livewire('navigation-menu')
+        <x-banner />
+
+        <div class="min-vh-100">
+            @livewire('navigation-menu')
+
+            <!-- Page Heading -->
+            @if (isset($header))
+                <header class="d-flex py-3 shadow-sm border-bottom">
+                    <div class="container">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif
+
+            <!-- Page Content -->
+            <main class="container">
+                {{ $slot }}
+            </main>
+        </div>
+
+        {{-- @livewire('navigation-menu')
+
+        <!-- Page Heading -->
+        <header class="d-flex py-3 bg-white shadow-sm border-bottom">
+            <div class="container">
+                {{ $header }}
+            </div>
+        </header>
 
         <!-- Page Content -->
         <main class="container my-5">
             {{ $slot }}
-        </main>
+        </main> --}}
 
-
-        <script>
-            (() => {
-              'use strict'
-
-              const storedTheme = localStorage.getItem('theme')
-
-              const getPreferredTheme = () => {
-                if (storedTheme) {
-                  return storedTheme
-                }
-
-                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-              }
-
-              const setTheme = function (theme) {
-                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                  document.documentElement.setAttribute('data-bs-theme', 'dark')
-                } else {
-                  document.documentElement.setAttribute('data-bs-theme', theme)
-                }
-              }
-
-              setTheme(getPreferredTheme())
-
-              const showActiveTheme = theme => {
-                const activeThemeIcon = document.querySelector('.theme-icon-active use')
-                //const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-                //const svgOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
-
-                document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-                  element.classList.remove('active')
-                })
-
-                //btnToActive.classList.add('active')
-                //activeThemeIcon.setAttribute('href', svgOfActiveBtn)
-              }
-
-              window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-                if (storedTheme !== 'light' || storedTheme !== 'dark') {
-                  setTheme(getPreferredTheme())
-                }
-              })
-
-              window.addEventListener('DOMContentLoaded', () => {
-                showActiveTheme(getPreferredTheme())
-
-                document.querySelectorAll('[data-bs-theme-value]')
-                  .forEach(toggle => {
-                    toggle.addEventListener('click', () => {
-                      const theme = toggle.getAttribute('data-bs-theme-value')
-                      localStorage.setItem('theme', theme)
-                      setTheme(theme)
-                      showActiveTheme(theme)
-                    })
-                  })
-              })
-            })()
-        </script>
 
         @stack('modals')
+        @livewireScripts
         @stack('scripts')
     </body>
 
