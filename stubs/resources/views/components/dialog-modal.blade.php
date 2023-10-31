@@ -27,7 +27,7 @@
         <div class="modal-body">
             {{ $content }}
         </div>
-        <div class="modal-footer bg-light">
+        <div class="modal-footer">
             {{ $footer }}
         </div>
     </div>

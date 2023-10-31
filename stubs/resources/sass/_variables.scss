@@ -6,31 +6,13 @@
 @import "bootstrap/scss/utilities";
 
 // Body-light
-$body-bg: #fff;
+$body-bg: rgb(243, 244, 246);
 $body-color: #1C344D;
 // Body-dark
-$body-bg-dark: #27374D;
+$body-bg-dark: rgb(17, 24, 39);
 $body-color-dark: #DDE6ED;
 
 $color-mode-type: data;
-@include color-mode(dark) {
-  .card {
-    background-color: --var(body-bg-dark);
-  }
-}
-
-@include color-mode(light) {
-  .card {
-    background-color: white;
-  }
-}
-
-@include color-mode(auto) {
-  .card {
-    background-color: white;
-  }
-}
-
 
 $input-border-color: $gray-500;
 

@@ -7,6 +7,10 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        {{-- light-dark-mode --}}
+        {{-- @vite('resources/js/custom.js') --}}
+        <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
+
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -28,7 +32,7 @@
     </head>
 
 
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased body-bg">
         <x-banner />
 
         <div class="min-vh-100">
@@ -37,7 +41,7 @@
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="d-flex py-3 shadow-sm border-bottom">
-                    <div class="container">
+                    <div class="container ps-md-5">
                         {{ $header }}
                     </div>
                 </header>

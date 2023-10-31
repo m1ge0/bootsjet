@@ -1,2 +1,3 @@
+//import './custom';
 import './bootstrap';
-import './custom';
+

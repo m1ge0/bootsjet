@@ -1,6 +1,6 @@
 <?php
 
-namespace M1ge0\Bootsjet;
+namespace m1ge0\bootsjet;
 
 use Illuminate\Support\ServiceProvider;
 

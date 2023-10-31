@@ -19,7 +19,7 @@
                     {{ $logo }}
                 </div>
 
-                <div class="card bg-white shadow-sm px-3 mx-4 py-1">
+                <div class="card shadow-sm px-3 mx-4 py-1">
                     {{ $slot }}
                 </div>
             </div>

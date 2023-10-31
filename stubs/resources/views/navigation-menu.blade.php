@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-md border border-bottom">
+<nav class="navbar navbar-expand-md border-bottom nav-color">
 
     <div class="container">
         <!-- Logo -->
-        <a class="navbar-brand me-4" href="/">
+        <a class="navbar-brand me-4 ms-md-4" href="/">
             <x-application-mark/>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -18,7 +18,7 @@
             </ul>
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav align-items-center">
+            <ul class="navbar-nav align-items-center me-md-4">
 
                 <!-- Teams Dropdown -->
             @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())

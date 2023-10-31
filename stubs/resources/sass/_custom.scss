@@ -4,6 +4,74 @@
     color: --var(bs-body-color);
 }
 
-.test {
-    background-color: var(--bs-gray-100);
+@include color-mode(dark) {
+  body {
+    background-color: rgb(17, 24, 39);
+    color: #DDE6ED;
+  }
+
+  .nav-color {
+    background-color: rgb(31, 41, 55);
+  }
+
+  header  {
+    background-color: rgb(31, 41, 55);
+  }
+
+  .welcomeContainerTop {
+    background-color: rgb(31, 41, 55);
+  }
+
+  .welcomeContainerBottom {
+    background-color: rgb(31, 41, 55);
+  }
+
+  .card {
+    background-color: rgb(31, 41, 55);
+  }
+
+  .input {
+    background-color: rgb(17, 24, 39);
+  }
+
+}
+
+@include color-mode(light) {
+  body {
+    background-color: rgb(243, 244, 246);
+    color: #1C344D;
+  }
+
+  .nav-color {
+    background-color: #fff;
+  }
+
+  header  {
+    background-color: #fff;
+  }
+
+  .welcomeContainerTop {
+    background-color: #fff;
+  }
+
+  .welcomeContainerBottom {
+    background-color: rgba(229, 231, 235, 0.25);
+  }
+
+}
+
+.nav-color {
+    background-color: #fff;
+}
+
+header  {
+    background-color: #fff;
+}
+
+.welcomeContainerTop {
+    background-color: #fff;
+}
+
+.welcomeContainerBottom {
+    background-color: rgba(229, 231, 235, 0.25);
 }

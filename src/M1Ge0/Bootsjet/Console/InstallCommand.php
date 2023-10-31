@@ -1,10 +1,10 @@
 <?php
 
-namespace M1ge0\Bootsjet\Console;
+namespace m1ge0\bootsjet\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use M1ge0\Bootsjet\JetstrapFacade;
+use m1ge0\bootsjet\JetstrapFacade;
 
 class InstallCommand extends Command
 {
