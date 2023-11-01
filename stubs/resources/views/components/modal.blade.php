@@ -13,6 +13,9 @@ $maxWidth = [
 
 <!-- Modal -->
 <div
+
+    wire:ignore.self
+
     x-init="() => {
 
         let el = document.querySelector('#modal-id-{{ $id }}')

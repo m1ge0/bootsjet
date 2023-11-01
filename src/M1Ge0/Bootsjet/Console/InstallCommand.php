@@ -5,6 +5,8 @@ namespace m1ge0\bootsjet\Console;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use m1ge0\bootsjet\JetstrapFacade;
+use NascentAfrica\Jetstrap\Helpers;
+use NascentAfrica\Jetstrap\Presets;
 
 class InstallCommand extends Command
 {
@@ -13,7 +15,8 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'bootsjet:swap {--teams : Indicates if team support should be installed}';
+    protected $signature = 'bootsjet:swap 
+        {--teams : Indicates if team support should be installed}';
 
     /**
      * The console command description.
@@ -72,7 +75,7 @@ class InstallCommand extends Command
         (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/resources/sass', resource_path('sass'));
 
         // light-dark mode js script
-        (new Filesystem)->makeDirectory(public_path('js'));
+        //(new Filesystem)->makeDirectory(public_path('js'));
         (new Filesystem)->ensureDirectoryExists(public_path('js'));
         copy(__DIR__.'/../../../../stubs/resources/custom.js', public_path('js/custom.js'));
 
@@ -102,6 +105,11 @@ class InstallCommand extends Command
         copy(__DIR__.'/../../../../stubs/resources/views/policy.blade.php', resource_path('views/policy.blade.php'));
         copy(__DIR__.'/../../../../stubs/resources/views/terms.blade.php', resource_path('views/terms.blade.php'));
 
+        // Teams...
+        if ($this->option('teams')) {
+            $this->swapBootsjetLivewireTeamStack();
+        }
+
         $this->line('');
         $this->info('Rounding up...');
 
@@ -109,54 +117,6 @@ class InstallCommand extends Command
         $this->info('Bootstrap scaffolding swapped for livewire successfully.');
         $this->comment('Please execute the "npm install && npm run dev" command to build your assets.');
 
-    }
-
-    /**
-     * Swap the Livewire stack into the application.
-     *
-     * @return void
-     */
-    protected function swapJetstreamLivewireStack()
-    {
-        $this->line('');
-        $this->info('Installing livewire stack...');
-
-        // Directories...
-        (new Filesystem)->ensureDirectoryExists(resource_path('views/api'));
-        (new Filesystem)->ensureDirectoryExists(resource_path('views/auth'));
-        (new Filesystem)->ensureDirectoryExists(resource_path('views/layouts'));
-        (new Filesystem)->ensureDirectoryExists(resource_path('views/profile'));
-
-        // Layouts
-        (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/livewire/resources/views/layouts', resource_path('views/layouts'));
-        (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/livewire/resources/views/api', resource_path('views/api'));
-        (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/livewire/resources/views/profile', resource_path('views/profile'));
-        (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/livewire/resources/views/auth', resource_path('views/auth'));
-
-        // Single Blade Views...
-        copy(__DIR__.'/../../../../stubs/livewire/resources/views/dashboard.blade.php', resource_path('views/dashboard.blade.php'));
-        copy(__DIR__.'/../../../../stubs/livewire/resources/views/navigation-menu.blade.php', resource_path('views/navigation-menu.blade.php'));
-        copy(__DIR__.'/../../../../stubs/livewire/resources/views/terms.blade.php', resource_path('views/terms.blade.php'));
-        copy(__DIR__.'/../../../../stubs/livewire/resources/views/policy.blade.php', resource_path('views/policy.blade.php'));
-
-        // Assets...
-        (new Filesystem)->copy(__DIR__.'/../../../../stubs/resources/js/app.js', resource_path('js/app.js'));
-
-        // Publish...
-        $this->callSilent('vendor:publish', ['--tag' => 'jetstrap-views', '--force' => true]);
-
-        // Teams...
-        if ($this->option('teams')) {
-            $this->swapBootsjetLivewireTeamStack();
-        }
-
-        $this->line('');
-        $this->info('Finishing...');
-        $this->installPreset();
-
-        $this->line('');
-        $this->info('Bootstrap scaffolding swapped successfully.');
-        $this->comment('Please execute the "npm install && npm run build" command to build your assets.');
     }
 
     /**
@@ -170,8 +130,9 @@ class InstallCommand extends Command
         (new Filesystem)->ensureDirectoryExists(resource_path('views/teams'));
 
         (new Filesystem)->copyDirectory(__DIR__.'/../../../../stubs/resources/views/teams', resource_path('views/teams'));
+
+        $this->line('');
+        $this->info('Swapping teams directory ...');
     }
-
-
 
 }

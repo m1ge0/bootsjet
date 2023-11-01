@@ -30,7 +30,7 @@
     background-color: rgb(31, 41, 55);
   }
 
-  .input {
+  input {
     background-color: rgb(17, 24, 39);
   }
 
@@ -58,6 +58,14 @@
     background-color: rgba(229, 231, 235, 0.25);
   }
 
+  .card {
+    background-color: #fff;
+  }
+
+  input {
+    background-color: #fff !important;
+  }
+
 }
 
 .nav-color {
@@ -75,3 +83,4 @@ header  {
 .welcomeContainerBottom {
     background-color: rgba(229, 231, 235, 0.25);
 }
+

@@ -8,7 +8,6 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         {{-- light-dark-mode --}}
-        {{-- @vite('resources/js/custom.js') --}}
         <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -20,9 +19,6 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Fonts -->
-        {{-- @googlefonts('SourceCodePro') --}}
-
         <!-- Scripts -->
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
@@ -32,7 +28,7 @@
     </head>
 
 
-    <body class="font-sans antialiased body-bg">
+    <body class="font-sans antialiased">
         <x-banner />
 
         <div class="min-vh-100">
@@ -53,19 +49,6 @@
             </main>
         </div>
 
-        {{-- @livewire('navigation-menu')
-
-        <!-- Page Heading -->
-        <header class="d-flex py-3 bg-white shadow-sm border-bottom">
-            <div class="container">
-                {{ $header }}
-            </div>
-        </header>
-
-        <!-- Page Content -->
-        <main class="container my-5">
-            {{ $slot }}
-        </main> --}}
 
 
         @stack('modals')

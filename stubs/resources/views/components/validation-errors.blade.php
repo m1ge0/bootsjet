@@ -1,5 +1,5 @@
 @if ($errors->any())
-    <div {!! $attributes->merge(['class' => 'alert alert-danger text-sm p-2']) !!} role="alert">
+    <div {!! $attributes->merge(['class' => 'alert alert-danger fs-5 p-2']) !!} role="alert">
         <div class="font-weight-bold">{{ __('Whoops! Something went wrong.') }}</div>
 
         <ul>

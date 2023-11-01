@@ -134,7 +134,7 @@
     </x-slot>
 
     <x-slot name="content">
-        <h3 class="h5 font-weight-bold">
+        <h3 class="h5 fw-bold">
             @if ($this->enabled)
                 {{ __('You have enabled two factor authentication.') }}
             @else
