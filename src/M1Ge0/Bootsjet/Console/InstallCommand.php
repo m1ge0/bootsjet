@@ -110,6 +110,9 @@ class InstallCommand extends Command
             $this->swapBootsjetLivewireTeamStack();
         }
 
+        // Publish...
+        $this->callSilent('vendor:publish', ['--tag' => 'bootsjet-views', '--force' => true]);
+
         $this->line('');
         $this->info('Rounding up...');
 
