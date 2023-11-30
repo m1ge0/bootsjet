@@ -1,8 +1,8 @@
 # Bootsjet
 
-[![Latest Stable Version](https://poser.pugx.org/nascent-africa/jetstrap/v)](//packagist.org/packages/nascent-africa/jetstrap)
-[![Total Downloads](https://poser.pugx.org/nascent-africa/jetstrap/downloads)](//packagist.org/packages/nascent-africa/jetstrap)
-[![License](https://poser.pugx.org/nascent-africa/jetstrap/license)](//packagist.org/packages/nascent-africa/jetstrap)
+[![Latest Stable Version](https://poser.pugx.org/m1ge0/bootsjet/v)](//packagist.org/packages/m1ge0/bootsjet)
+[![Total Downloads](https://poser.pugx.org/m1ge0/bootsjet/downloads)](//packagist.org/packages/m1ge0/bootsjet)
+[![License](https://poser.pugx.org/m1ge0/bootsjet/license)](//packagist.org/packages/m1ge0/bootsjet)
 
   
 ## Description
@@ -93,7 +93,7 @@ php artisan migrate
 ```
 
 
-### Extras
+<!-- ### Extras
 
 #### Pagination
 
@@ -144,7 +144,7 @@ or
 ```bash
 composer tests
 ```
-
+ -->
 
 ## License
-Bootsjet is open-sourced software licensed under the [MIT license](https://github.com/nascent-africa/jetstrap/blob/master/LICENSE).
+Bootsjet is open-sourced software licensed under the [MIT license](https://github.com/m1ge0/bootsjet/blob/master/LICENSE).
