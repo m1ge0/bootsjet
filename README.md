@@ -1,15 +1,9 @@
 # Bootsjet
 
 <p algin="start">
-    <a href="https://packagist.org/packages/m1ge0/bootsjet">
-        <img src="https://img.shields.io/packagist/dt/m1ge0/bootsjet" alt="Total Downloads">
-    </a>
-    <a href="https://packagist.org/packages/m1ge0/bootsjet">
-        <img src="https://img.shields.io/packagist/v/m1ge0/bootsjet" alt="Latest Stable Version">
-    </a>
-    <a href="https://packagist.org/packages/m1ge0/bootsjet">
-        <img src="https://img.shields.io/packagist/l/m1ge0/bootsjet" alt="License">
-    </a>
+<a href="https://packagist.org/packages/m1ge0/bootsjet"><img src="https://img.shields.io/packagist/dt/m1ge0/bootsjet" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/m1ge0/bootsjet"><img src="https://img.shields.io/packagist/v/m1ge0/bootsjet" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/m1ge0/bootsjet"><img src="https://img.shields.io/packagist/l/m1ge0/bootsjet" alt="License"></a>
 </p>
   
 ## Description
