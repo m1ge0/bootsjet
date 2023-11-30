@@ -13,6 +13,11 @@ class BootsjetServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        /*
+         * Register the service provider for the dependency.
+         */
+        $this->app->register('m1geo\bootsjet\BootsjetServiceProvider');
+
         $this->app->bind('bootsjet', function ($app) {
             return new Bootsjet;
         });
