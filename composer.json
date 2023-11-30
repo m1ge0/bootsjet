@@ -18,16 +18,16 @@
   },
   "autoload": {
     "psr-4": {
-      "m1ge0\\bootsjet\\": "/src/m1ge0/bootsjet"
+      "M1Ge0\\Bootsjet\\": "/src/M1Ge0/Bootsjet"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "m1ge0\\bootsjet\\BootsjetServiceProvider"
+        "M1Ge0\\Bootsjet\\BootsjetServiceProvider"
       ],
       "aliases": {
-        "bootsjet": "m1ge0\\bootsjet\\JetstrapFacade"
+        "bootsjet": "M1Ge0\\Bootsjet\\JetstrapFacade"
       }
     }
   },
