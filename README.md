@@ -1,5 +1,17 @@
 # Bootsjet
 
+<p align="center">
+    <a href="https://packagist.org/packages/laravel/jetstream">
+        <img src="https://img.shields.io/packagist/dt/laravel/jetstream" alt="Total Downloads">
+    </a>
+    <a href="https://packagist.org/packages/laravel/jetstream">
+        <img src="https://img.shields.io/packagist/v/laravel/jetstream" alt="Latest Stable Version">
+    </a>
+    <a href="https://packagist.org/packages/laravel/jetstream">
+        <img src="https://img.shields.io/packagist/l/laravel/jetstream" alt="License">
+    </a>
+</p>
+
 [![Latest Stable Version](https://img.shields.io/packagist/v/m1ge0/bootsjet)](//packagist.org/packages/m1ge0/bootsjet)
 [![Total Downloads](https://poser.pugx.org/m1ge0/bootsjet/downloads)](//packagist.org/packages/m1ge0/bootsjet)
 [![License](https://poser.pugx.org/m1ge0/bootsjet/license)](//packagist.org/packages/m1ge0/bootsjet)
