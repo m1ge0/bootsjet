@@ -1,6 +1,6 @@
 # Bootsjet
 
-[![Latest Stable Version](https://poser.pugx.org/m1ge0/bootsjet/v)](//packagist.org/packages/m1ge0/bootsjet)
+[![Latest Stable Version](https://img.shields.io/packagist/v/m1ge0/bootsjet)](//packagist.org/packages/m1ge0/bootsjet)
 [![Total Downloads](https://poser.pugx.org/m1ge0/bootsjet/downloads)](//packagist.org/packages/m1ge0/bootsjet)
 [![License](https://poser.pugx.org/m1ge0/bootsjet/license)](//packagist.org/packages/m1ge0/bootsjet)
 
