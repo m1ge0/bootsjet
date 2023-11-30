@@ -1,6 +1,6 @@
 # Bootsjet
 
-<p>
+<p algin="start">
     <a href="https://packagist.org/packages/m1ge0/bootsjet">
         <img src="https://img.shields.io/packagist/dt/m1ge0/bootsjet" alt="Total Downloads">
     </a>
