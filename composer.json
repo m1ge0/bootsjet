@@ -18,7 +18,7 @@
   },
   "autoload": {
     "psr-4": {
-      "M1Ge0\\Bootsjet\\": "/src/M1Ge0/Bootsjet"
+      "M1Ge0\\Bootsjet\\": "/src/M1Ge0/Bootsjet/"
     }
   },
   "extra": {
