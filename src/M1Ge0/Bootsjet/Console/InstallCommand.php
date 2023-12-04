@@ -1,10 +1,10 @@
 <?php
 
-namespace m1ge0\bootsjet\Console;
+namespace M1Ge0\Bootsjet\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use m1ge0\bootsjet\JetstrapFacade;
+use M1Ge0\Bootsjet\JetstrapFacade;
 use NascentAfrica\Jetstrap\Helpers;
 use NascentAfrica\Jetstrap\Presets;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace m1ge0\bootsjet;
+namespace M1Ge0\Bootsjet;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,11 +13,6 @@ class BootsjetServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        /*
-         * Register the service provider for the dependency.
-         */
-        $this->app->register('m1geo\bootsjet\BootsjetServiceProvider');
-
         $this->app->bind('bootsjet', function ($app) {
             return new Bootsjet;
         });
