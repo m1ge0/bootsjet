@@ -2,9 +2,10 @@
 
 namespace M1Ge0\Bootsjet\Console;
 
+
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use M1Ge0\Bootsjet\JetstrapFacade;
+use M1Ge0\Bootsjet\BootsjetFacade;
 
 class InstallCommand extends Command
 {
