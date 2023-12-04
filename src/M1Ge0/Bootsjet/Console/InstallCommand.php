@@ -5,8 +5,6 @@ namespace M1Ge0\Bootsjet\Console;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use M1Ge0\Bootsjet\JetstrapFacade;
-use NascentAfrica\Jetstrap\Helpers;
-use NascentAfrica\Jetstrap\Presets;
 
 class InstallCommand extends Command
 {
