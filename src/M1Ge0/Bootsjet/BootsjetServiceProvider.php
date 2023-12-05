@@ -57,7 +57,7 @@ class BootsjetServiceProvider extends ServiceProvider
         }
 
         $this->commands([
-            M1Ge0\Bootsjet\Console\InstallCommand::class,
+            Console\InstallCommand::class,
         ]);
     }
 }
