@@ -27,7 +27,7 @@
         "M1Ge0\\Bootsjet\\BootsjetServiceProvider"
       ],
       "aliases": {
-        "bootsjet": "M1Ge0\\Bootsjet\\JetstrapFacade"
+        "Bootsjet": "M1Ge0\\Bootsjet\\JetstrapFacade"
       }
     }
   },
