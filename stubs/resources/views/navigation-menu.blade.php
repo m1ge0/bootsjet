@@ -51,13 +51,15 @@
                         <hr class="dropdown-divider">
 
                         <!-- Team Switcher -->
-                        <h6 class="dropdown-header">
-                            {{ __('Switch Teams') }}
-                        </h6>
+                        @if (Auth::user()->allTeams()->count() > 1)
+                            <h6 class="dropdown-header">
+                                {{ __('Switch Teams') }}
+                            </h6>
 
-                        @foreach (Auth::user()->allTeams() as $team)
-                            <x-switchable-team :team="$team" />
-                        @endforeach
+                            @foreach (Auth::user()->allTeams() as $team)
+                                <x-switchable-team :team="$team" />
+                            @endforeach
+                        @endif
                     </x-slot>
                 </x-dropdown>
             @endif

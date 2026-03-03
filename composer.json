@@ -1,25 +1,35 @@
 {
   "name": "m1ge0/bootsjet",
-    "description": "A Laravel 10 package for Jetstream + Livewire to switch from Tailwindcss to Bootstrap.",
-    "keywords": ["laravel", "bootstrap", "jetstream"],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "m1ge0",
-            "role": "Dev"
-        }
-    ],
+  "description": "A Laravel 12-ready package for Jetstream + Livewire to switch from Tailwindcss to Bootstrap.",
+  "keywords": ["laravel", "bootstrap", "jetstream"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "m1ge0",
+      "role": "Dev"
+    }
+  ],
   "require": {
     "php": "^8.2",
-    "illuminate/support": "^11.0"
+    "illuminate/support": "^11.0|^12.0"
   },
   "require-dev": {
-    "laravel/jetstream": "^5.0"
+    "laravel/jetstream": "^5.0",
+    "orchestra/testbench": "^9.0|^10.0",
+    "phpunit/phpunit": "^10.5|^11.0"
   },
   "autoload": {
     "psr-4": {
       "M1Ge0\\Bootsjet\\": "src/M1Ge0/Bootsjet/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "M1Ge0\\Bootsjet\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit --configuration phpunit.xml.dist"
   },
   "extra": {
     "laravel": {
@@ -27,7 +37,7 @@
         "M1Ge0\\Bootsjet\\BootsjetServiceProvider"
       ],
       "aliases": {
-        "Bootsjet": "M1Ge0\\Bootsjet\\JetstrapFacade"
+        "Bootsjet": "M1Ge0\\Bootsjet\\BootsjetFacade"
       }
     }
   },
