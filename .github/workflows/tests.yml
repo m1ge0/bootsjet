@@ -1,0 +1,39 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - php: "8.2"
+            support: "^11.0"
+          - php: "8.3"
+            support: "^12.0"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+          tools: composer:v2
+
+      - name: Prepare dependencies for selected support version
+        run: |
+          if [ "${{ matrix.support }}" = "^12.0" ]; then
+            composer remove laravel/jetstream --dev --no-update
+          fi
+          composer require "illuminate/support:${{ matrix.support }}" --no-update
+
+      - name: Install dependencies
+        run: composer update --prefer-dist --no-interaction --no-progress --with-all-dependencies
+
+      - name: Run tests
+        run: composer test

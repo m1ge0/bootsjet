@@ -8,7 +8,18 @@
   
 ## Description
 
-Bootsjet is a lightweight laravel 10 package that focuses on the `VIEW` side of [Jetstream](https://github.com/laravel/jetstream) package installed in your Laravel application, so when a swap is performed, the `Action`, `MODEL`, `CONTROLLER`, `Component` and `Action` classes of your project is still 100% handled by Laravel development team with no added layer of complexity.
+Bootsjet is a lightweight Laravel package that focuses on the `VIEW` layer of [Jetstream](https://github.com/laravel/jetstream) (Livewire stack).  
+It swaps Tailwind-based frontend assets/views to Bootstrap-oriented stubs while leaving your existing backend flow (actions, models, controllers, components) untouched.
+
+## Compatibility
+
+- PHP: `^8.2`
+- Laravel: `^11.0 | ^12.0`
+- Jetstream: `^5.0` (Livewire stack)
+
+## Laravel 12 Support
+
+Laravel 12 is now officially supported in this package line.
 
 ## Table of Content
   * [Installation](#installation)
@@ -24,13 +35,14 @@ Bootsjet is a lightweight laravel 10 package that focuses on the `VIEW` side of 
 
 ### Installing Jetstream
 
-You may use Composer to install Jetstream into your new Laravel project:
+Use Composer to install Jetstream into your Laravel project:
 
 ```
 composer require laravel/jetstream
 ```
 
-If you choose to install Jetstream through Composer, you should run the jetstream:install Artisan command. This command accepts the name of the stack you prefer (livewire or inertia). You are highly encouraged to read through the entire documentation of Livewire or Inertia before beginning your Jetstream project. In addition, you may use the --teams switch to enable team support:
+After installing Jetstream, run `jetstream:install` with the `livewire` stack.  
+You can pass `--teams` if your project needs team features:
 
 #### Install Jetstream With Livewire
 
@@ -44,14 +56,15 @@ php artisan jetstream:install livewire --teams
 
 ```
 
-### Install ui via composer
-You need to install the bootstrap scaffolding via comopser. 
+### Install UI via Composer
+
+Install Bootstrap scaffolding support via Composer:
 
 ```
 composer require laravel/ui 
 ```
 
-#### Install bootsrap with laravel/ui
+#### Install Bootstrap with laravel/ui
 
 ```
 php artisan ui bootstrap 
@@ -60,16 +73,15 @@ php artisan ui bootstrap
 
 ### Install Bootsjet
 
-Use Composer to install Bootsjet into your new Laravel project as dev dependency:
+Install Bootsjet as a dev dependency:
 
 ```
 composer require m1ge0/bootsjet --dev
 ```
 
-> It is important you install and configure [Laravel Jetstream](https://github.com/laravel/jetstream) before performing a swap.
+> Install and configure [Laravel Jetstream](https://github.com/laravel/jetstream) before running the swap command.
 
-You are highly encouraged to read through the entire documentation of [Jetstream](https://jetstream.laravel.com/1.x/introduction.html)
-before beginning your Bootsjet project. In addition, you may use the `--teams` switch to swap team assets just like you would in Jetstream:
+You may use the `--teams` option to also swap team-related assets:
 
 ```bash
 
@@ -85,13 +97,22 @@ This will publish overrides to enable Bootstrap like the good old days!
 
 ### Finalizing The Installation
 
-After installing Bootsjet and swapping Jetstream resources, remove tailwindCSS and its dependencies if any from your package.json and then install and build your NPM dependencies and migrate your database:
+After swapping Jetstream resources:
+
+1. Ensure Tailwind packages are removed from `package.json` if they are still present.
+2. Ensure Bootstrap/Sass dependencies are available in your frontend setup.
+3. Install and build frontend assets.
+4. Run migrations.
+
+`bootsjet:swap` tries to update `package.json` automatically (remove Tailwind-related packages and add Bootstrap/Sass when missing). Please still review the resulting file in case your project has custom frontend constraints.
 
 ```
 npm install && npm run build
 
 php artisan migrate
 ```
+
+> In production you should use `npm run build`. During development you can use `npm run dev`.
 
 
 <!-- ### Extras
