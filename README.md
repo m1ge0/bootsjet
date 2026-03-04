@@ -16,10 +16,12 @@ It swaps Tailwind-based frontend assets/views to Bootstrap-oriented stubs while 
 - PHP: `^8.2`
 - Laravel: `^11.0 | ^12.0`
 - Jetstream: `^5.0` (Livewire stack)
+- Livewire: `^3.0 | ^4.0`
 
 ## Laravel 12 Support
 
 Laravel 12 is now officially supported in this package line.
+Laravel 12 projects can keep using Livewire 4. Bootsjet should not force a Livewire downgrade.
 
 ## Table of Content
   * [Installation](#installation)
