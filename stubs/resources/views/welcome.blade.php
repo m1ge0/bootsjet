@@ -1,5 +1,217 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ config('app.name', 'Laravel') }}</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+</head>
+<body class="bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body border-bottom">
+        <div class="container">
+            <a class="navbar-brand fw-semibold" href="{{ url('/') }}">
+                {{ config('app.name', 'Laravel') }}
+            </a>
+
+            <div class="ms-auto d-flex align-items-center gap-2">
+                @if (Route::has('login'))
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="btn btn-primary">
+                            {{ __('Dashboard') }}
+                        </a>
+                    @else
+                        <a href="{{ route('login') }}" class="btn btn-outline-primary">
+                            {{ __('Log in') }}
+                        </a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="btn btn-primary">
+                                {{ __('Register') }}
+                            </a>
+                        @endif
+                    @endauth
+                @endif
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4 p-md-5">
+                        <h1 class="display-6 fw-semibold mb-3">
+                            {{ __('Welcome to :app', ['app' => config('app.name', 'Laravel')]) }}
+                        </h1>
+
+                        <p class="text-secondary mb-4">
+                            {{ __('Your application is ready. Start building your project with Laravel, Livewire, and Bootstrap.') }}
+                        </p>
+
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <a class="text-decoration-none" href="https://laravel.com/docs" target="_blank" rel="noreferrer">
+                                    <div class="card h-100 border">
+                                        <div class="card-body">
+                                            <h2 class="h6 mb-2">{{ __('Documentation') }}</h2>
+                                            <p class="text-secondary small mb-0">
+                                                {{ __('Read the official Laravel documentation from start to finish.') }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-4">
+                                <a class="text-decoration-none" href="https://laracasts.com" target="_blank" rel="noreferrer">
+                                    <div class="card h-100 border">
+                                        <div class="card-body">
+                                            <h2 class="h6 mb-2">{{ __('Laracasts') }}</h2>
+                                            <p class="text-secondary small mb-0">
+                                                {{ __('Level up with practical Laravel and PHP video tutorials.') }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-4">
+                                <a class="text-decoration-none" href="https://laravel-news.com" target="_blank" rel="noreferrer">
+                                    <div class="card h-100 border">
+                                        <div class="card-body">
+                                            <h2 class="h6 mb-2">{{ __('Laravel News') }}</h2>
+                                            <p class="text-secondary small mb-0">
+                                                {{ __('Stay informed about new releases and community updates.') }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-center text-secondary small mt-4 mb-0">
+                    Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ config('app.name', 'Laravel') }}</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+</head>
+<body class="bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body border-bottom">
+        <div class="container">
+            <a class="navbar-brand fw-semibold" href="{{ url('/') }}">
+                {{ config('app.name', 'Laravel') }}
+            </a>
+
+            <div class="ms-auto d-flex align-items-center gap-2">
+                @if (Route::has('login'))
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="btn btn-primary">
+                            {{ __('Dashboard') }}
+                        </a>
+                    @else
+                        <a href="{{ route('login') }}" class="btn btn-outline-primary">
+                            {{ __('Log in') }}
+                        </a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="btn btn-primary">
+                                {{ __('Register') }}
+                            </a>
+                        @endif
+                    @endauth
+                @endif
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4 p-md-5">
+                        <h1 class="display-6 fw-semibold mb-3">
+                            {{ __('Welcome to :app', ['app' => config('app.name', 'Laravel')]) }}
+                        </h1>
+
+                        <p class="text-secondary mb-4">
+                            {{ __('Your application is ready. Start building your project with Laravel, Livewire, and Bootstrap.') }}
+                        </p>
+
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <a class="text-decoration-none" href="https://laravel.com/docs" target="_blank" rel="noreferrer">
+                                    <div class="card h-100 border">
+                                        <div class="card-body">
+                                            <h2 class="h6 mb-2">{{ __('Documentation') }}</h2>
+                                            <p class="text-secondary small mb-0">
+                                                {{ __('Read the official Laravel documentation from start to finish.') }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-4">
+                                <a class="text-decoration-none" href="https://laracasts.com" target="_blank" rel="noreferrer">
+                                    <div class="card h-100 border">
+                                        <div class="card-body">
+                                            <h2 class="h6 mb-2">{{ __('Laracasts') }}</h2>
+                                            <p class="text-secondary small mb-0">
+                                                {{ __('Level up with practical Laravel and PHP video tutorials.') }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-4">
+                                <a class="text-decoration-none" href="https://laravel-news.com" target="_blank" rel="noreferrer">
+                                    <div class="card h-100 border">
+                                        <div class="card-body">
+                                            <h2 class="h6 mb-2">{{ __('Laravel News') }}</h2>
+                                            <p class="text-secondary small mb-0">
+                                                {{ __('Stay informed about new releases and community updates.') }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-center text-secondary small mt-4 mb-0">
+                    Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">

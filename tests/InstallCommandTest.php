@@ -24,7 +24,11 @@ class InstallCommandTest extends TestCase
         $this->assertFileExists(resource_path('sass/app.scss'));
         $this->assertFileExists(resource_path('js/app.js'));
         $this->assertFileExists(resource_path('views/navigation-menu.blade.php'));
+        $this->assertFileExists(resource_path('views/welcome.blade.php'));
         $this->assertFileExists(public_path('js/custom.js'));
+
+        $welcome = $files->get(resource_path('views/welcome.blade.php'));
+        $this->assertStringNotContainsString('resources/css/app.css', $welcome);
 
         $packageJson = json_decode($files->get(base_path('package.json')), true);
 

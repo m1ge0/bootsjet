@@ -101,6 +101,7 @@ class InstallCommand extends Command
         $this->safeCopyFile($files, __DIR__.'/../../../../stubs/resources/views/navigation-menu.blade.php', resource_path('views/navigation-menu.blade.php'));
         $this->safeCopyFile($files, __DIR__.'/../../../../stubs/resources/views/policy.blade.php', resource_path('views/policy.blade.php'));
         $this->safeCopyFile($files, __DIR__.'/../../../../stubs/resources/views/terms.blade.php', resource_path('views/terms.blade.php'));
+        $this->safeCopyFile($files, __DIR__.'/../../../../stubs/resources/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
 
         // Teams...
         if ($this->option('teams')) {
